@@ -12,13 +12,6 @@ describe('index', () => {
     })
   })
 
-  describe('deepestChild()', () => {
-    it('returns the most deeply nested child in #grand-node', () => {
-      console.log(deepestChild().innerHTML)
-      expect(deepestChild()).toBe(document.querySelector('#grand-node div div div div'))
-    })
-  })
-
   describe('increaseRankBy(n)', () => {
     it('increases ranks in .ranked-list by n', () => {
       increaseRankBy(3)
@@ -39,6 +32,13 @@ describe('index', () => {
       for (let i = 0, l = children.length; i < l; i++) {
         expect(parseInt(children[i].innerHTML)).toEqual(start - i + 3)
       }
+    })
+  })
+
+  describe('deepestChild()', () => {
+    it('returns the most deeply nested child in #grand-node', () => {
+      console.log(deepestChild().innerHTML)
+      expect(deepestChild()).toBe(document.querySelector('#grand-node div div div div'))
     })
   })
 })
